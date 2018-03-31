@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace ConfigReader.cs
 {
-    public class FileAdapter
+    public class FileAdapter : IFileAdapter
     {
-        public bool IsExist(string filePath)
+        public bool Exists(string filePath)
         {
             return File.Exists(filePath);
         }
@@ -18,5 +18,12 @@ namespace ConfigReader.cs
         {
             return File.ReadAllLines(filePath);
         }
+    }
+
+    public interface IFileAdapter
+    {
+        bool Exists(string filePath);
+        string[] ReadAllLines(string filePath);
+
     }
 }

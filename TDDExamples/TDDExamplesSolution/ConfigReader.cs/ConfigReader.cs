@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConfigReader.cs;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -9,12 +10,26 @@ namespace ConfigReaderUtil
 {
     public class ConfigReader
     {
-        public string Read(string filePath , string key)
+        private IFileAdapter _fileAdapter;
+        public ConfigReader(IFileAdapter fileAdapter)
         {
-            if (File.Exists(filePath))
-                throw new Exception("File does not exist");
+            _fileAdapter = fileAdapter;
+        }
+        //public string Read(string filePath , string key)
+        //{
+        //    if (File.Exists(filePath))
+        //        throw new Exception("File does not exist");
 
-            string[] lines = File.ReadAllLines(filePath);
+        //    string[] lines = File.ReadAllLines(filePath);
+        //    return lines[0];
+        //}
+
+        public string Read(string filePath, string key)
+        {
+            if (_fileAdapter.Exists(filePath))
+                throw new FileNotFoundException("File does not exist");
+
+            string[] lines = _fileAdapter.ReadAllLines(filePath);
             return lines[0];
         }
     }
