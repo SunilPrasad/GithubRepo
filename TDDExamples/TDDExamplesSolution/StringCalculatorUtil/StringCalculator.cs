@@ -10,19 +10,46 @@ namespace StringCalculatorUtil
     {
         public int Add(string inputString)
         {
+            List<string> delimeters = new List<string> { ",", "\n" };
+
+            if (inputString.StartsWith("//"))
+            {
+                var newDelimeter = inputString.ToCharArray()[2];
+                delimeters.Add(newDelimeter.ToString());
+                inputString = inputString.Substring(3);
+            }
+
+            return Add(inputString, delimeters);
+        }
+
+        private static int Add(string inputString, List<string> delimeters)
+        {
+            string[] numbers = inputString.Split(delimeters.ToArray(), StringSplitOptions.RemoveEmptyEntries);
             int result = 0;
-            string []numbers = inputString.Split(new char[]{','},StringSplitOptions.RemoveEmptyEntries);
-            
-           foreach(var num in numbers)
+            foreach (var num in numbers)
             {
                 int intNum;
-                if (!Int32.TryParse(num, out intNum))
-                    throw new NotSupportedException("Only string numbers are supported");
+                if (!IsValidNumber(num, out intNum))
+                    throw new NotSupportedException("Only string numbers are supported");            
 
-                result += intNum;
+                if (intNum < 1000)
+                {
+                    result += intNum;
+                }               
             }
 
             return result;
+        }
+
+        private static bool IsValidNumber(string number, out int num)
+        {            
+            if (!Int32.TryParse(number, out num))
+                return false;
+
+            if (num < 0)
+                return false;
+
+            return true;
         }
     }
 

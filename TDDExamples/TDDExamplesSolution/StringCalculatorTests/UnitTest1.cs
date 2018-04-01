@@ -75,20 +75,37 @@ namespace StringCalculatorUnitTests
             Assert.AreEqual(3 + 6 + 15 + 18 + 46 + 33, res);            
         }
 
-
+        [TestMethod]
         public void whenNewLineIsUsedBetweenNumbersThenReturnValuesAreTheirSums()
         {
-            // Assert.assertEquals(3 + 6 + 15, StringCalculator.add("3,6n15"));
+            StringCalculator stringCalculator = new StringCalculator();
+            int res = stringCalculator.Add("6\n15");
+            Assert.AreEqual(3 + 6 + 15, 3, res);            
         }
 
+        [TestMethod]
         public void whenDelimiterIsSpecifiedThenItIsUsedToSeparateNumbers()
         {
-            // Assert.assertEquals(3 + 6 + 15, StringCalculator.add("//;n3;6;15"));
+            StringCalculator stringCalculator = new StringCalculator();
+            int res = stringCalculator.Add("//;\n3;6;15");
+            Assert.AreEqual(3 + 6 + 15,  res);
+            
+        }
+        
+        [TestMethod]
+        [ExpectedException(typeof(NotSupportedException))]
+        public void whenNegativeNumbersAreUsedThenRuntimeExceptionIsThrown()
+        {
+            StringCalculator stringCalculator = new StringCalculator();
+            int res = stringCalculator.Add("2,3,-9,2,4,5");            
         }
 
+        [TestMethod]
         public void whenOneOrMoreNumbersAreGreaterThan1000IsUsedThenItIsNotIncludedInSum()
         {
-            // Assert.assertEquals(3 + 1000 + 6, StringCalculator8.add("3,1000,1001,6,1234"));
+            StringCalculator stringCalculator = new StringCalculator();
+            int res = stringCalculator.Add("3,1000,1001,6,1234");
+            Assert.AreEqual(3 + 6 , res);          
         }
     }
 }
