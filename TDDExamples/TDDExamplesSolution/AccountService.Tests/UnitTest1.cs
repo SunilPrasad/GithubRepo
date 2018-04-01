@@ -14,15 +14,17 @@ namespace AccountServiceUnitTests
             _repositoryMock = new Mock<IRepository>();
         }
         [Fact]
-        public void ReturnNotFoundWhenUserDoesNotExist()
+        public void ValidateUserShouldReturnNotFoundWhenUserDoesNotExist()
         {
             _repositoryMock.Setup(rep => rep.CheckUser("sunil")).Returns(false);
 
             var accountController = new AccountController(_repositoryMock.Object);
 
-            var result = accountController.ValidateUser("sunil", "su9!L@@");
+            var validationResult = accountController.ValidateUser("sunil", "su9!L@@");
 
-           // Assert.Equal(1, result.);
+            var result = Assert.IsType<OkObjectResult>(validationResult);
+            
+             Assert.True(((StatusResult)result.Value).Status);
         }
     }
 }
