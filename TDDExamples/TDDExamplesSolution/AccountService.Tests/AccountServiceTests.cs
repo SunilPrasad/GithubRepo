@@ -13,6 +13,7 @@ namespace AccountServiceUnitTests
         {
             _repositoryMock = new Mock<IRepository>();
         }
+
         [Fact]
         public void ValidateUserShouldReturnNotFoundWhenUserDoesNotExist()
         {
@@ -22,9 +23,8 @@ namespace AccountServiceUnitTests
 
             var validationResult = accountController.ValidateUser("sunil", "su9!L@@");
 
-            var result = Assert.IsType<OkObjectResult>(validationResult);
+             Assert.IsType<NotFoundObjectResult>(validationResult);           
             
-             Assert.True(((StatusResult)result.Value).Status);
         }
     }
 }

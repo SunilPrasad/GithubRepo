@@ -18,7 +18,7 @@ namespace AccountService
         [HttpPost]
         public IActionResult ValidateUser(string userName , string password)
         {
-            if (_accountRepository.CheckUser(userName))
+            if (!_accountRepository.CheckUser(userName))
                 return NotFound("User does not exist");
 
             if (_accountRepository.ValidateUser(userName,password))
