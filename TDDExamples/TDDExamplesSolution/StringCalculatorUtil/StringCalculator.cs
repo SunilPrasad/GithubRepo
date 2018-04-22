@@ -59,7 +59,7 @@ namespace StringCalculatorUtil
 
     //Requirement 2: For an empty string the method will return 0
 
-    // Requirement 3: Method will return their sum of numbers
+    // Requirement 3: Method will return their sum of numbers for two numbers
 
     //Requirement 4: Allow the Add method to handle an unknown amount of numbers
 
@@ -70,8 +70,10 @@ namespace StringCalculatorUtil
     //To change a delimiter, the beginning of the string will contain a 
     //separate line that looks like this: “//[delimiter]\n[numbers…]” for 
     //example “//;\n1;2” should take 1 and 2 as parameters and return 3 where the default delimiter is ‘;’ 
+    
+    //Requirement 7 : Throw an exception for non integer string value 
 
-    //Requirement 7: Negative numbers will throw an exception
+    //Requirement 8: Negative numbers will throw an exception
 
-    //Requirement 8: Numbers bigger than 1000 should be ignored
+    //Requirement 9: Numbers bigger than 1000 should be ignored
 }
