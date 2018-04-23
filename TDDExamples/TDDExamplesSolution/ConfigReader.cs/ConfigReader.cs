@@ -15,9 +15,9 @@ namespace ConfigReaderUtil
         {
             _fileAdapter = fileAdapter;
         }
-        //public string Read(string filePath , string key)
+        //public string Read(string filePath, string key)
         //{
-        //    if (File.Exists(filePath))
+        //    if (!File.Exists(filePath))
         //        throw new Exception("File does not exist");
 
         //    string[] lines = File.ReadAllLines(filePath);

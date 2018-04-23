@@ -6,7 +6,7 @@ using UnitTestProject1.Builder;
 namespace UnitTestProject1
 {
     [TestClass]
-    public class UnitTest1
+    public class OrderTests
     {
         [TestMethod]
         public void ChargesCustomerForTotalCostOfAllOrderedItems()
@@ -19,6 +19,16 @@ namespace UnitTestProject1
             order.AddOrderLine(new OrderLine("Tweed Cape", 1));
 
             Order order1 = new OrderBuilder().Build();
+
+            /*
+             new OrderBuilder()
+                    .fromCustomer(
+                        new CustomerBuilder()
+                            .withAddress(new AddressBuilder().withNoPostcode().build())
+                            .build())
+                            .build();
+             
+             */
         }
 
     }

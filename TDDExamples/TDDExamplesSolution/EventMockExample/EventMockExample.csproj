@@ -51,8 +51,9 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="EventListener.cs" />
+    <Compile Include="EventListenerTests.cs" />
+    <Compile Include="IProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

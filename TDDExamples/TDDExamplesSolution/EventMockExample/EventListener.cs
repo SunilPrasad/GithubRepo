@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EventMockExample
-{
-    public interface IProcessor
-    {
-        string AMethodThatRaisesAnEvent(int value);
-        event EventHandler<CancelEventArgs> AboutToProcess;
-    }
+namespace EventMockExample{
 
     public class EventListener
     {

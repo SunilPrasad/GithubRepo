@@ -6,7 +6,7 @@ using Rhino.Mocks;
 namespace EventMockExample
 {
     [TestClass]
-    public class UnitTest1
+    public class EventListenerTests
     {
         [TestMethod]
         public void TheEventListenerShouldCauseProcessingToBeCancelledWhenAboutToProcessEventRaised()
