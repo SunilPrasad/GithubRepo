@@ -22,7 +22,7 @@ namespace AccountService
                 return NotFound("User does not exist");
 
             if (_accountRepository.ValidateUser(userName,password))
-            {
+            {                
                 return Ok(new StatusResult(true));
             }
 

@@ -15,31 +15,28 @@ namespace TestApp
         }
     }
 
-    public class Form
+    public class AccontController
     {
-        private Button _button;
-        public Form(Button button)
+        
+        public bool ValidateUser(string username, string password)
         {
-            _button = button;
-            _button.OnCLickEvent += _button_OnCLickEvent;
-        }
+            Repository repository = new Repository();
 
-        private void _button_OnCLickEvent(object sender, EventArgs e)
-        {
-            Console.WriteLine("Button clicked");
-        }
-    }
-
-    public class Button
-    {
-        public event EventHandler OnCLickEvent;
-
-        public void Click()
-        {
-            if(OnCLickEvent!=null)
+            if(!repository.CheckUser("alexa"))
             {
-                OnCLickEvent(this, EventArgs.Empty);
+                return false;
             }
+
+            return true;
         }
     }
+
+    public class Repository
+    {
+        public bool CheckUser(string userName)
+        {
+            return true;
+        }
+    }
+
 }
