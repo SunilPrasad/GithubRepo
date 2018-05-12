@@ -18,7 +18,7 @@ namespace ConfigReader.UnitTest
         
         [TestMethod]
         [ExpectedException(typeof(FileNotFoundException))]
-        public void ThrowExceptionWhenFileNotExit()
+        public void ReaderShouldThrowExceptionWhenFileDoesNotExit()
         {
             var configReader = new ConfigReaderUtil.ConfigReader(_fileAdapter);
             _fileAdapter.Stub<IFileAdapter>(f => f.Exists("config.json")).Return(false);

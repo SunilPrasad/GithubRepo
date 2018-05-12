@@ -1,0 +1,28 @@
+class with one public method and many private methods
+
+Single responsibilty principal
+
+Solving Design problems
+Solves testing problems
+
+Testing Pains
+
+State hidden in method
+ 	Metods are too long SRP violations
+
+Difficult setup
+ Too much coupling
+
+Incomplete shutdown
+
+State leaks across tests
+
+Difficult mocking
+ Law of demeter violations
+ Hard to mock particular class
+
+Hidden Effects
+ you can not test a class becuase you have no acess to the ultimate effect of its execution
+
+Test Thrash
+ Many unit test cahnge whenevr you change your code

@@ -17,10 +17,15 @@ namespace TestApp
 
     public class AccontController
     {
+        private Repository repository;
+        public AccontController(Repository repository)
+        {
+
+        }
         
         public bool ValidateUser(string username, string password)
         {
-            Repository repository = new Repository();
+            
 
             if(!repository.CheckUser("alexa"))
             {

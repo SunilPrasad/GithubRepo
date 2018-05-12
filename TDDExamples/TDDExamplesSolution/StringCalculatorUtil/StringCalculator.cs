@@ -55,7 +55,8 @@ namespace StringCalculatorUtil
 
     //
 
-    // Requirement 1: The method can take 0, 1 or 2 numbers separated by comma (,).
+    // Requirement 1: The method can take 0, 1 or 2 numbers separated by comma (,).Throw 
+    //NotSupported exception when more than 2 numbers are passed .
 
     //Requirement 2: For an empty string the method will return 0
 
