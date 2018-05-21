@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 
 namespace StringCalculator
 {
+    [TestClass]
     public class StringParserTests
     {
         [TestMethod]
         public void ShouldReturnNumberArrayPassedWithDelimeter()
         {
             var stringParser = new StringParser();
-            Assert.AreEqual("1", stringParser.Parse("1")[0]);
+            Assert.AreEqual(1, stringParser.Parse("1").ToArray()[0]);
         }
 
     }

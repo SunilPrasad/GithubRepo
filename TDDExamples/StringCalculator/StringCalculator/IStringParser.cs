@@ -1,7 +1,8 @@
-﻿namespace StringCalculator
+﻿using System.Collections.Generic;
+
+namespace StringCalculator
 {
-    public interface IStringParser
-    {
-        string[] Parse(string strNumbers);
+    public interface IStringParser    {
+        IEnumerable<int> Parse(string strNumbers);
     }
 }

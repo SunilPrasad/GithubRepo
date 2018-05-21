@@ -1,10 +1,11 @@
 ﻿using System;
-
+using System.Collections.Generic;
+using System.Linq;
 namespace StringCalculator
 {
     public class StringParser : IStringParser
     {
-        public string[] Parse(string strNumbers)
+        public IEnumerable<int> Parse(string strNumbers)
         {
             char[] delemiters = new char[] { ',', '\n' };
 
@@ -18,7 +19,7 @@ namespace StringCalculator
             }
 
             var numberArray = strNumbers.Split(delemiters, StringSplitOptions.RemoveEmptyEntries);
-            return numberArray;
+            return numberArray.ToList().Select(x => Convert.ToInt32(x));
         }
     }
 }

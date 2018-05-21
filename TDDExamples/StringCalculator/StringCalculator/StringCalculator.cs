@@ -18,20 +18,11 @@ namespace StringCalculator
         }
         public int Add(string strNumbers)
         {
-            string[] numberArray = _parser.Parse(strNumbers);
+            var numberArray = _parser.Parse(strNumbers).ToArray();
 
-            int total = 0;
+            _validator.Validate(numberArray);
 
-            foreach (var num in numberArray)
-            {
-                if (!_validator.Validate(num, out int intNum))
-                    throw new NotSupportedException("There are some invlid numbers");
-
-                total += intNum;
-            }
-
-            return total;
-
+           return numberArray.Aggregate(0, (total, x) => total + x);
 
         }
     }

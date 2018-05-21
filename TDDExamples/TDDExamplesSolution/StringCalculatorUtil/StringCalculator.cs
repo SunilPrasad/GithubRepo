@@ -60,19 +60,21 @@ namespace StringCalculatorUtil
 
     //Requirement 2: For an empty string the method will return 0
 
+    //Requirement : For single number add method should return the same number
+
     // Requirement 3: Method will return their sum of numbers for two numbers
 
     //Requirement 4: Allow the Add method to handle an unknown amount of numbers
 
     //Requirement 5: Allow the Add method to handle new lines between numbers (instead of commas).
-    // Requirement 6 : for any non number throw exception
+
     //Requirement 7: Support different delimiters
 
     //To change a delimiter, the beginning of the string will contain a 
     //separate line that looks like this: “//[delimiter]\n[numbers…]” for 
     //example “//;\n1;2” should take 1 and 2 as parameters and return 3 where the default delimiter is ‘;’ 
-    
-  
+
+    // Requirement 6 : for any non number throw exception
 
     //Requirement 8: Negative numbers will throw an exception
 

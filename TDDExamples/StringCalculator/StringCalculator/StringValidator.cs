@@ -8,15 +8,13 @@ namespace StringCalculator
 {
     public class StringValidator : IStringValidator
     {
-        public bool Validate(string number,out int numInt)
-        {          
-            if (!Int32.TryParse(number, out numInt))
-                return false;
-
-            if (numInt < 0)
-                return false;
-
-            return true; ;
+        public void Validate(int []numbers)
+        {
+            foreach (var num in numbers)
+            {
+                if (num < 0)
+                    throw new NotSupportedException();
+            }
         }
 
     }

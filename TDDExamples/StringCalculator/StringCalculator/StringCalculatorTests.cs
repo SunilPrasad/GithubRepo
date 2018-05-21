@@ -5,8 +5,7 @@ namespace StringCalculator
 {
     [TestClass]
     public class StringCalculatorTests
-    {
-        private IStringParser _parse;
+    {        
         private StringCalculator stringCalculator;
 
         [TestInitialize]
